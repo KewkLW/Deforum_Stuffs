@@ -9,15 +9,10 @@ This script provides a addon for Blender, allowing users to export camera motion
 ## Installation
 
 1. Download the `blender_export_to_parseq.py` file from the repository.
-
 2. Open Blender and go to `Edit > Preferences`.
-
 3. In the Preferences window, switch to the `Add-ons` tab.
-
 4. Click on the `Install...` button at the top of the window.
-
 5. Navigate to the location where you downloaded the `blender_export_to_parseq.py` file, select it, and click `Install Add-on`.
-
 6. The add-on should now appear in the add-on list. However, it might not be enabled yet. To enable it, find it in the list (you can use the search bar) and check the checkbox on the left side.
 
 ## Usage
