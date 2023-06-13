@@ -2,6 +2,8 @@ from . import info
 from . import maths_operations
 from . import camera_operations
 from . import export
+from . import import
+from . import export_parseq
 
 bl_info = {
     "name": "Export Camera Animation to Deforum collab/webui",
