@@ -32,3 +32,17 @@ class ImportDiffusionString(Operator, ImportHelper):
             camera_obj.keyframe_insert(data_path="location", frame=frame)
             camera_obj.keyframe_insert(data_path="rotation_euler", frame=frame)
         return {'FINISHED'}
+    
+def menu_func_import(self, context):
+    self.layout.operator(ImportDiffusionString.bl_idname, text="Diffusion (.txt)")
+
+def register():
+    bpy.utils.register_class(ImportDiffusionString)
+    bpy.types.TOPBAR_MT_file_import.append(menu_func_import)
+
+def unregister():
+    bpy.utils.unregister_class(ImportDiffusionString)
+    bpy.types.TOPBAR_MT_file_import.remove(menu_func_import)
+
+if __name__ == "__main__":
+    register()

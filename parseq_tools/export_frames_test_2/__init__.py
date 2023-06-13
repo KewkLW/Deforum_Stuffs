@@ -1,7 +1,7 @@
 from . import info
 from . import maths_operations
 from . import camera_operations
-from . import import_export
+from . import export
 
 bl_info = {
     "name": "Export Camera Animation to Deforum collab/webui",
@@ -17,7 +17,7 @@ bl_info = {
 
 # Register and unregister methods
 def register():
-    import_export.register()
+    export.register()
 
 def unregister():
-    import_export.unregister()
+    export.unregister()

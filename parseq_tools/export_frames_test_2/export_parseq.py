@@ -25,3 +25,17 @@ class ExportFramesOperator(bpy.types.Operator):
         else:
             pass
         return {'FINISHED'}
+
+def menu_func_export(self, context):
+    self.layout.operator(ExportFramesOperator.bl_idname, text="Export Frames")
+
+def register():
+    bpy.utils.register_class(ExportFramesOperator)
+    bpy.types.TOPBAR_MT_file_export.append(menu_func_export)
+
+def unregister():
+    bpy.utils.unregister_class(ExportFramesOperator)
+    bpy.types.TOPBAR_MT_file_export.remove(menu_func_export)
+
+if __name__ == "__main__":
+    register()
