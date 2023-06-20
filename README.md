@@ -1,17 +1,30 @@
-# Deforum Tools
-Simple Blender addon. Download the zip and install in Blender. 
-In Blender go to Edit > Preferences > Add-ons > install > locate zip and install. 
+## Deforum Tools
 
-This will put a menu on the right with 2 buttons. 
+This is a simple Blender addon that provides additional functionality. To use it, follow the steps below:
 
-Display Path: 
-  This takes the animation data and converts it to a curve. (I'll add a convert curve to animations later)
-  Select the camera and then click display path. 
+1. Download the ZIP file containing the addon.
+2. Install the addon in Blender.
+   - Open Blender and navigate to Edit > Preferences > Add-ons.
+   - Click on the "Install" button.
+   - Locate the downloaded ZIP file and select it for installation.
 
-Clean Selected Keyframes:
-  This requires you to be in the Graph Editor and have the Camera selected. 
-  Select the keyframes you want to clean and click the Clean Selected Keyframe button.
-    This will look at all the keyframes and find each of the low and high values where they change and then remove all keyframes inbetween and add a Bezier and try to fit the shape that it was. This is pretty accurate but not perfect. It's perfectly fine for Deforum.
+After installing the addon, a new menu will appear on the right side of the Blender interface, containing two buttons:
+
+### Display Path:
+This feature takes the animation data and converts it into a curve. (Note: A future update will include the ability to convert curves to animations.)
+To use this feature:
+1. Select the camera object in your scene.
+2. Click on the "Display Path" button in the addon's menu.
+
+### Clean Selected Keyframes:
+This feature allows you to clean up selected keyframes in the Graph Editor. To use it:
+1. Switch to the Graph Editor in Blender.
+2. Ensure that the camera object is selected.
+3. Select the keyframes you want to clean.
+4. Click on the "Clean Selected Keyframes" button in the addon's menu.
+
+The cleaning process involves analyzing the selected keyframes and removing any intermediate keyframes between high and low value changes. Additionally, the addon will attempt to fit a Bezier curve to maintain the shape of the animation. While this process is generally accurate, please note that it may not be perfect. However, for Deforum purposes, it is perfectly suitable.
+
 
 # Deforum Parseq Tools
 
