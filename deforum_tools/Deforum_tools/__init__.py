@@ -1,5 +1,6 @@
 import bpy
-from modify_animation import modify_selected_keyframes
+from .modify_animation import modify_selected_keyframes
+from .curve_to_frames import execute_curve_to_frames  # Import the function from curve_to_frames.py
 
 bl_info = {
     "name": "Deforum Tools",
@@ -41,7 +42,17 @@ class OBJECT_OT_CalculateMotionPath(bpy.types.Operator):
                 curve_obj.select_set(True)
 
         return {'FINISHED'}
-    
+#calling the curve to frames script
+class OBJECT_OT_CurveToFrames(bpy.types.Operator):
+    bl_idname = "object.curve_to_frames"
+    bl_label = "Curve To Frames"
+    bl_description = "Convert curve to frames"
+    bl_options = {'REGISTER', 'UNDO'}
+
+    def execute(self, context):
+        execute_curve_to_frames()
+        return {'FINISHED'}
+        
 #Calling the clean animation script
 class OBJECT_OT_ModifySelectedKeyframes(bpy.types.Operator):
     bl_idname = "object.modify_selected_keyframes"
@@ -65,7 +76,15 @@ class MotionPathPanel(bpy.types.Panel):
         layout = self.layout
         layout.operator("object.calculate_motion_path", text="Display path")
         layout.operator("object.modify_selected_keyframes", text="Clean Selected Keyframes")
+        layout.operator("object.curve_to_frames", text="Curve To Frames")  # Add button for new operator
+
      
+classes = [
+    OBJECT_OT_CalculateMotionPath,
+    OBJECT_OT_CurveToFrames,
+    OBJECT_OT_ModifySelectedKeyframes,
+    MotionPathPanel,
+]
 
 def register():
     for cls in classes:
