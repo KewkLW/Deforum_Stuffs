@@ -1,3 +1,18 @@
+# Deforum Tools
+Simple Blender addon. Download the zip and install in Blender. 
+In Blender go to Edit > Preferences > Add-ons > install > locate zip and install. 
+
+This will put a menu on the right with 2 buttons. 
+
+Display Path: 
+  This takes the animation data and converts it to a curve. (I'll add a convert curve to animations later)
+  Select the camera and then click display path. 
+
+Clean Selected Keyframes:
+  This requires you to be in the Graph Editor and have the Camera selected. 
+  Select the keyframes you want to clean and click the Clean Selected Keyframe button.
+    This will look at all the keyframes and find each of the low and high values where they change and then remove all keyframes inbetween and add a Bezier and try to fit the shape that it was. This is pretty accurate but not perfect. It's perfectly fine for Deforum.
+
 # Deforum Parseq Tools
 
 ## Scripts
