@@ -3,9 +3,7 @@ import mathutils
 import math
 import numpy as np
 
-
 def execute_curve_to_frames():
-
     # Check if there is a curve object in the scene
     curve = None
     for obj in bpy.data.objects:
@@ -38,7 +36,7 @@ def execute_curve_to_frames():
 
     # Get the first spline in the curve
     spline = curve.data.splines[0]
-    points = spline.points  
+    points = spline.points
 
     # Calculate the number of frames per point
     frames_per_point = bpy.context.scene.frame_end / len(points)
@@ -61,30 +59,30 @@ def execute_curve_to_frames():
         # Insert a keyframe for the camera's rotation
         camera.keyframe_insert(data_path="rotation_euler", frame=i*frames_per_point)
 
-    # Now remove all keyframes except min and max
-    for fcurve in camera.animation_data.action.fcurves:
-        # Copy all keyframe points
-        keyframe_points = [point for point in fcurve.keyframe_points]
+        # Now remove all keyframes except min and max  
+        for fcurve in camera.animation_data.action.fcurves:  
+            # Copy all keyframe points  
+            keyframe_points = [point for point in fcurve.keyframe_points]  
 
-        # Create an array of the y values
-        y_values = np.array([point.co[1] for point in keyframe_points])
+            # Create an array of the y values  
+            y_values = np.array([point.co[1] for point in keyframe_points])  
 
-        # Find the global maximum and minimum
-        max_index = np.argmax(y_values)
-        min_index = np.argmin(y_values)
+            # Find the global maximum and minimum  
+            max_index = np.argmax(y_values)  
+            min_index = np.argmin(y_values)  
 
-        # Clear all keyframes
-        fcurve.keyframe_points.clear()
+            # Clear all keyframes  
+            fcurve.keyframe_points.clear()  
 
-        # Add back only the global maximum and minimum
-        for index in (max_index, min_index):
-            point = keyframe_points[index]
-            fcurve.keyframe_points.insert(point.co[0], point.co[1])
+            # Add back only the global maximum and minimum  
+            for index in (max_index, min_index):  
+                point = keyframe_points[index]  
+                fcurve.keyframe_points.insert(point.co[0], point.co[1])  
 
-        # Set keyframe handle types to AUTO to create Bezier curve
-        for point in fcurve.keyframe_points:
-            point.handle_left_type = 'AUTO'
-            point.handle_right_type = 'AUTO'
+            # Set keyframe handle types to AUTO to create Bezier curve  
+            for point in fcurve.keyframe_points:  
+                point.handle_left_type = 'AUTO'  
+                point.handle_right_type = 'AUTO'
 
-
-execute_curve_to_frames()
+        # Executes the function
+        execute_curve_to_frames()
