@@ -1,15 +1,34 @@
 ## Deforum Tools
 
-A place for Deforum specific tools
+This is a simple Blender addon that provides additional functionality. To use it, follow the steps below:
 
-# Deforum Parseq Tools
+1. Download the ZIP file containing the addon.
+2. Install the addon in Blender.
+   - Open Blender and navigate to Edit > Preferences > Add-ons.
+   - Click on the "Install" button.
+   - Locate the downloaded ZIP file and select it for installation.
 
-A place where, you guessed it! Parseq tools are
+After installing the addon, a new menu will appear on the right side of the Blender interface, containing two buttons:
 
-##
-Prompt tools
+### Display Path:
+This feature takes the animation data and converts it into a curve.
+To use this feature:
+1. Select the camera object in your scene.
+2. Click on the "Display Path" button in the addon's menu.
 
-Yep...
+### Clean Selected Keyframes:
+This feature allows you to clean up selected keyframes in the Graph Editor. To use it:
+1. Switch to the Graph Editor in Blender.
+2. Ensure that the camera object is selected.
+3. Select the keyframes you want to clean.
+4. Click on the "Clean Selected Keyframes" button in the addon's menu.
+
+### Curve to Frames
+1. Draw a cuve, place a curve, throw a curve up whatever, select the curve 
+2. Click curve to frames and now you have frame data from a curve that can be export to deforum.
+
+The cleaning process involves analyzing the selected keyframes and removing any intermediate keyframes between high and low value changes. Additionally, the addon will attempt to fit a Bezier curve to maintain the shape of the animation. While this process is generally accurate, please note that it may not be perfect. However, for Deforum purposes, it is perfectly suitable.
+
 
 ## Contact
 
